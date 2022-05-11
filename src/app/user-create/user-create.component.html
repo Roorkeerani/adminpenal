@@ -1,0 +1,38 @@
+<div class="container">
+    <form >
+    <div class="row">
+        <div class="col-lg-6">
+            <label for="">Name</label>
+            <input type="text" formControlName="name" class="form-control">
+            <span *ngIf="!userForm.get('name')?.valid && userForm.get('name')?.invalid" style="color: red;">User name should be more than 5 letters</span>
+        </div>
+
+        <div class="col-lg-6">
+            <label for="">E-Mail</label>
+            <input type="text" formControlName="email" class="form-control">
+            <span *ngIf="!userForm.get('email')?.valid && userForm.get('email')?.invalid" style="color: red;">Enter a valid E-mail</span>
+        </div>
+
+        <div class="col-lg-6">
+            <label for="">State</label>
+            <select formControlName="state" class="form-control">
+                <option>Odisha</option>
+                <option>Karnataka</option>
+        </select>
+        </div>
+
+        <div class="col-lg-6">
+            <label for="">Country</label>
+            <select formControlName="country" class="form-control">
+                <option>India</option>
+                <option>America</option>
+        </select>
+        </div>
+
+        <div class="col-lg-6 mt-2">
+            <input [disabled]="userForm.invalid" type="Submit" class="btn btn-primary">
+        </div>
+
+    </div>
+</form>
+</div>
